@@ -27,7 +27,7 @@ class PostContainer extends Component {
 	render() {
 		return  <div className="PostContainer"> 
 		{
-			this.props.posts.filter(post => post.CATEGORY.trim() == this.state.currentCategory.trim())
+			this.props.posts.filter(post => post.CATEGORY.trim() === this.state.currentCategory.trim())
 							.sort((a,b) => Date.parse(a.created_at) < Date.parse(b.created_at))
 							.map((post, i) => {
 							return (

@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import './App.css';
 import Logo from './components/logo';
 import Navbar from './components/navbar';
 import AddPost from './components/AddPost';
-import { setCategories } from './actions';
 import PostContainer from './containers/post_container';
 
 class App extends Component {
