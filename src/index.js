@@ -5,5 +5,8 @@ import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 import 'tachyons';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const store = createStore(getPosts);
+
+ReactDOM.render(
+		<App />, document.getElementById('root'));
 registerServiceWorker();

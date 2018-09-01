@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+
+.Navbar
+{
+	right: 0;
+	top: 15%;
+	text-align: center;
+	margin: auto;
+	overflow-x:scroll;
+	overflow-y: hidden;
+	display:flex;
+	-ms-overflow-style: none;
+    overflow: -moz-scrollbars-none;
+    font-family: 'Roboto', sans-serif;  
+}
+
+.Navbar::-webkit-scrollbar { 
+    display: none; 
+}
+
+button
+{
+	font-size: 20px;
+	border: none;
+	text-decoration: none;
+	background-color: transparent;
+	font-weight: bolder;
+	padding-right: 2em;
+	padding-left: 2em;
+	outline: none;
+	
+}
+
+h1
+{
+	overflow: hidden;
+	
+}
+
+button:clicked
+{
+	text-decoration: none;
+}

@@ -1,0 +1,36 @@
+.CommentContainer
+{
+	padding-top: 5px;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+
+}
+
+.SeeCommentsButton
+{
+   webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  background: #cdddf7;
+  padding-top:2px;
+  padding-bottom: 2px;
+  font-size: 2vw;
+  margin-top: 5px;
+  margin-bottom: 20px;
+
+}
+
+.AddPost
+{
+  webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  background: #cdddf7;
+  float:right;
+  text-align: center;
+  font-size: 2vw;
+  width: 2em;
+  padding: 0;
+  align-self: flex-end;
+}

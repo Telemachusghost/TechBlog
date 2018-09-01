@@ -12,9 +12,12 @@
 # environment
 .env
 FashionPhysician.pem
+server_dev.js
+/sql/*
 
 # scripts
 connect_ec2aws.sh
+connect_rdsaws.sh
 
 # misc
 .DS_Store

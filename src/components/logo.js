@@ -4,9 +4,10 @@ import './logo.css';
 
 const logo =  () => {
 	return (
-		<footer className="pv4 ph3 ph5-m ph6-l logo">
-  		 <a className='home' href="/"></a>
-		</footer>
+		<a className='Home' href="/">
+			<footer className="logo">
+			</footer>
+		</a>
  	);
 }
 

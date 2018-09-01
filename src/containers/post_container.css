@@ -1,0 +1,46 @@
+/*
+I am managing the post components css
+in this file because it felt easier to me at the time
+*/
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
+@import url('https://fonts.googleapis.com/css?family=Fjalla+One');
+.PostContainer
+{ 
+	font-family: 'Fjalla One', sans-serif;
+}
+
+
+
+.FeaturedPost
+{
+	border-radius: 20px;
+	background: #cdddf7;
+
+}
+
+.Title
+{
+	font-weight: bold;
+	font-size: 4vw;
+	margin: auto;
+	width: 50%;
+	text-align: center;
+}
+
+.Nickname
+{
+
+	font-size:3vw;
+}
+
+.PostContent
+{
+	font-size: 2vw;
+	margin: auto;
+	border: 1px solid black;
+	border-bottom: 0px;
+	border-right: 0px;
+	border-left: 0px;
+	padding-left: 4px;
+}
