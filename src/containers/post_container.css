@@ -14,33 +14,31 @@ in this file because it felt easier to me at the time
 
 .FeaturedPost
 {
-	border-radius: 20px;
-	background: #cdddf7;
-
+	box-shadow: 2px 2px 2px 2px #929aa8;
+    background: #cdddf7;
+	border-radius: 1px;
 }
 
 .Title
 {
 	font-weight: bold;
-	font-size: 4vw;
-	margin: auto;
-	width: 50%;
-	text-align: center;
+	font-size: 5vw;
 }
 
 .Nickname
 {
 
-	font-size:3vw;
+	font-size:4vw;
 }
 
 .PostContent
 {
-	font-size: 2vw;
+	font-size: 5vw;
 	margin: auto;
 	border: 1px solid black;
 	border-bottom: 0px;
 	border-right: 0px;
 	border-left: 0px;
-	padding-left: 4px;
+	padding-left: 1.2em;
+	padding-right: 1.2em;
 }

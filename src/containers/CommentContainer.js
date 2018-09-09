@@ -51,7 +51,9 @@ class CommentContainer extends Component {
               +
               </button>
               }
-              position="left center">
+              position="bottom center"
+              contentStyle={{background:"#cdddf7"}}
+              arrow={false}>
               <AddComment onComment={this.props.onComment} postid = {this.props.post_id}/>
               </Popup>
               }

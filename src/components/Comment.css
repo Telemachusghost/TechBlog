@@ -5,22 +5,25 @@
 
 .CommentNickname
 {
-	width: 25%;
+	width: 45%;
 	font-size: 3vw;
 	padding-left: 3px;
-	background: #cdddf7;
-	border-radius: 50px;
+	margin-top: 5px;
+  box-shadow: 1px 1px 1px 1px #929aa8;
+  background: #cdddf7;
+  border-radius: 1px;
 }
 
 .CommentContent
 {
-	font-size: 2vw;
-	border-radius: 20px;
-	background: #cdddf7;
+	font-size: 4vw;
 	margin-bottom: 5px;
 	margin-top: 5px;
 	text-align: left;
 	padding: 0 5px 0px 5px;
 	display: flex;
 	flex-direction: column;
+	box-shadow: 1px 1px 1px 1px #929aa8;
+  background: #cdddf7;
+  border-radius: 1px;
 }

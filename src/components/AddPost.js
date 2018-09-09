@@ -13,8 +13,7 @@ class AddPost extends Component {
 			   category: this.props.currentCategory,
 			   content: "",
 		  };
-		  this.handleChange =
-			this.handleChange.bind(this);
+		  this.handleChange = this.handleChange.bind(this);
 		  this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -50,6 +49,13 @@ class AddPost extends Component {
 				title: title, 
 				category: category
 			});
+		this.setState(
+      {
+      	nickname: "",
+      	content: "",
+      	title: ""
+      }
+		)
 	}
 
 	setValue(field, event) {
@@ -60,47 +66,44 @@ class AddPost extends Component {
 
   render() {
   	return (
-  		<Popup 	trigger = {
-              <button >
+  		<Popup className="AddPostComponent"	trigger = {
+              <button>
               Add Post
               </button>
               }
-              position="left center"
-              contentStyle={{
-              	width: "25%" 
-              }}
+              position="bottom center"
+              contentStyle={{padding:"0px", width:"50%", margin:"0px", background:"#cdddf7"}}
+              arrow={false}
               >
               <form className="AddPostForm" onSubmit={this.handleSubmit}>
-				<label>
-					Nickname<br/>
-					<input
-   
+					<input 
 						type="text" 
 						value={this.state.nickname} 
 						onChange={this.setValue.bind(this, 'nickname')} 
+						placeholder="Nickname"
+						size="11"
 						/>
-				</label>
-				<label>
-					<br/>Title<br/>
+						<br/>
 					<input 
 						type="text" 
 						value={this.state.title} 
 						onChange={this.setValue.bind(this, 'title')}
 						required
+						placeholder="title"
+						size="11"
+						required
 						/>
-				</label>
-				<label>
-					<br/>Post<br/>
 					<textarea
 						type="text"
-						cols="21"
-						rows="4"
+
 						value={this.state.content}
 						onChange={this.setValue.bind(this, 'content')}
 						required
+						placeholder="Post"
+						cols="26"
+						required
 					/>
-				</label>
-				<br/>
+					<br/>
 				<input className="PostButton" type="submit" value="Post" />
 			</form>
       </Popup>

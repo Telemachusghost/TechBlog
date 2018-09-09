@@ -1,12 +1,17 @@
- body
+/* body
 {
 	display:flex;
 	flex-direction: column;
 	height: 100vh;
 	width: 100%;
 	margin: 0;
-}
+}*/
 
+body, html 
+{
+	width: 100%;
+	height: 100%;
+}
 .Header
 {
 	display:flex;
@@ -14,22 +19,106 @@
 	width:100%;
 	overflow: hidden;
 }
+/*
+.categoryInstructions:clicked{transform: scale(1.1);}
+
+.categoryInstructions
+{
+	padding: 0px;
+	margin: 0px;
+  text-align: center;
+  align-content: center;
+  font-size: 2.5vw;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  width: 30%;
+  margin: auto;
+}
+
+.FingerIcon
+{
+	width: 64px;
+	height: 64px;
+	background-image: url("finger_swipe.png");
+	text-align: center;
+	align-self: center;
+	display: inline;
+	max-width: 100%;
+}
+
+.KeyboardIcon
+{
+	width: 64px;
+	height: 64px;
+	background-image: url("keyboard.png");
+	text-align: center;
+	align-self: center;
+	display: inline;
+	max-width: 100%;
+}*/
+
+/*.categoryInstructions:clicked .FingerIcon:clicked .KeyboardIcon:clicked{display: none;}
+
+@media screen and (max-width: 640px) 
+{
+    .KeyboardIcon .FingerIcon 
+    {
+         width: 8px;
+         height: 8px;
+    }
+    .categoryInstructions 
+    {
+      width: 40%;
+    }
+}*/
+
+.App
+{
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+/*body
+{
+	padding: 0;
+	margin: 0;
+}*/
+
 
 .Controls
 {
-	font-size: 2.5vw;
+	font-size: 3.5vw;
 	text-align: center;
 	border-radius: 20px;
-	background: #cdddf7;
 	margin: auto;
-  width: 30%;
+	width: 30%;
+	height: 45%;
   margin-bottom: 10px;
+  box-shadow: 1px 1px 1px 1px #929aa8;
+  background: #cdddf7;
+  border-radius: 1px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
 }
+
+
 
 .Content
 {
-	margin: auto;
-  width: 85%;
+	min-height: 100vh;
+  
 }
+
+.PostButton {
+	box-shadow: 1px 1px 0px 0px #929aa8;
+  background: #cdddf7;
+  border-radius: 1px;
+}
+
+
+
 
 

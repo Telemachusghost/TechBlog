@@ -12,12 +12,14 @@
    webkit-border-radius: 20px;
   -moz-border-radius: 20px;
   border-radius: 20px;
-  background: #cdddf7;
   padding-top:2px;
   padding-bottom: 2px;
-  font-size: 2vw;
+  font-size: 4vw;
   margin-top: 5px;
   margin-bottom: 20px;
+  box-shadow: 1px 1px 1px 1px #929aa8;
+  background: #cdddf7;
+  border-radius: 1px;
 
 }
 
@@ -26,11 +28,13 @@
   webkit-border-radius: 20px;
   -moz-border-radius: 20px;
   border-radius: 20px;
-  background: #cdddf7;
-  float:right;
   text-align: center;
-  font-size: 2vw;
-  width: 2em;
+  font-size: 4vw;
+  width: 4em;
   padding: 0;
-  align-self: flex-end;
+  align-self: flex-center;
+  box-shadow: 1px 1px 1px 1px #929aa8;
+  background: #cdddf7;
+  border-radius: 1px;
+  margin: auto;
 }

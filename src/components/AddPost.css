@@ -1,7 +1,16 @@
-
-
-.AddPostForm
-{
-	font-size: 1.5vw;
+.AddPostForm {
+	font-size: 2.5vw;
+	padding:0;
+	margin: 0;
 }
+
+
+.AddPostComponent {
+	display: flex;
+	flex-direction: column;
+	margin: 0;
+	padding: 0;
+}
+
+
 

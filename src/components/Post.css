@@ -1,5 +1,35 @@
+.Post
+{
+  display: flex;
+  flex-direction: column;
+}
+
+.Title
+{
+	display: flex;
+	flex-direction: column;
+  text-align: center;
+}
+
+.PostContent
+{
+	width: 100%;
+}
+
 .CommentButton
 {
 	margin: auto;
 	text-align: center;
+}
+
+.Date
+{
+	align-self: flex-end;
+	font-size: 2.5vw;
+	top: 0;
+}
+
+.Replies
+{
+	margin-right: 10px;
 }

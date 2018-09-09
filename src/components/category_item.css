@@ -1,0 +1,4 @@
+.CatItem:hover .CatItem:clicked
+{
+  transform: scale(1.1);
+}

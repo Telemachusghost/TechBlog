@@ -1,0 +1,17 @@
+.Footer
+{
+	margin: 0;
+	padding: 0; 
+	background-image: linear-gradient(#accaf9, #6d9ce8);
+	text-align: center;
+	justify-content: center;
+	font-size: 3vw;
+	bottom: 0;
+  height: 15%;
+  left: 0;
+}
+
+.linkedin 
+{
+	font-size: 3vw;
+}

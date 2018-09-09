@@ -54,23 +54,23 @@ class AddComment extends Component {
 		return (
 			<form onSubmit={this.handleSubmit}>
 				<label>
-					Nickname
 					<input 
 						type="text" 
 						value={this.state.nickname} 
 						onChange={this.setValue.bind(this, 'nickname')} 
+						placeholder="Nickname"
 						/>
 				</label>
 				<label>
-					Comment
 					<textarea
 						type="text" 
 						value={this.state.content}
 						onChange={this.setValue.bind(this, 'content')}
 						required
+						placeholder="Comment"
 					/>
 				</label>
-				<input type="submit" value="Post" />
+				<input className="PostButton" type="submit" value="Post" />
 			</form>
 		)
 	}

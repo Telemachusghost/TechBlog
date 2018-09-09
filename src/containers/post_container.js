@@ -6,13 +6,14 @@ import CommentContainer from'./CommentContainer';
 
 class PostContainer extends Component {
 
+
 	constructor(props) {
 		super(props);
 		this.state = {
 			comments: this.props.comments,
-			currentCategory: this.props.category
+			currentCategory: this.props.category,
+			popFactor: 86267286 // This is roughly the Date.parse value of a day
 		}
-		
 	}
 
 	componentWillReceiveProps(props) {
@@ -28,12 +29,12 @@ class PostContainer extends Component {
 		return  <div className="PostContainer"> 
 		{
 			this.props.posts.filter(post => post.CATEGORY.trim() === this.state.currentCategory.trim())
-							.sort((a,b) => Date.parse(a.created_at) < Date.parse(b.created_at))
+							.sort((a,b) => (Date.parse(a.created_at) + this.state.popFactor*a.popularity) < (Date.parse(b.created_at) + this.state.popFactor*b.popularity))
 							.map((post, i) => {
 							return (
 							<div key={i} className="container">
 								<div key={i} className="FeaturedPost">
-								<Post key={post.id} post={post}/>
+								<Post key={post.id} post={post} />
 								</div>
 								<CommentContainer 
 								key={post.id} 

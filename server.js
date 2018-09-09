@@ -26,7 +26,7 @@ app.use(function(req, res, next) {
 		host: process.env.REACT_APP_MYSQL_HOST,
 		user: process.env.REACT_APP_MYSQL_USER,
 		password: process.env.REACT_APP_MYSQL_PASS,
-		database: process.env.REACT_APP_MYSQL_DATABASE
+		database: process.env.REACT_APP_MYSQL_DATABASE,
 		dateStrings: true
 	});
 	connection.connect();
@@ -53,9 +53,9 @@ app.get("/api/posts", function(req, res) {
 	let qry = "SELECT posts.id, posts.nickname, \
 							posts.title, \
 	   						posts.content AS POST, \
-	   						group_concat(comments.content) AS 'COMMENT(S)',\
 	   						categories.name AS CATEGORY,\
-	   						posts.created_at\
+	   						posts.created_at,\
+	   						COUNT(comments.post_id) AS popularity\
 						\
 						FROM posts\
 							LEFT JOIN comments ON comments.post_id=posts.id\
@@ -65,15 +65,23 @@ app.get("/api/posts", function(req, res) {
 	sendQry(qry, req, res);
 });
 
-
+/*
+TODO create doc
+*/
 app.get("/api/comments", function(req, res) {
 	let qry = "SELECT * FROM comments ORDER BY comments.created_at";
 	sendQry(qry, req, res);
 })
 
+/*
+TODO create doc
+*/
 app.get("/api/categories", function(req, res) {
-	let qry = "SELECT name AS category \
-					  FROM categories";
+	let qry = "SELECT name AS category, " 
+	          + "COUNT(posts.id) AS popularity "
+	          + "FROM categories "
+	          + "LEFT JOIN posts ON categories.id=posts.category "
+	          + "GROUP BY categories.id"
 	sendQry(qry, req, res);
 })
 
@@ -124,6 +132,17 @@ app.put("/api/addpost", function(req, res) {
 	console.log(qry);
 	sendQry(qry, req, res);
 
+})
+
+app.put("/api/addcategory", function(req, res) {
+	let category = mysql.escape(req.body.category);
+	let qry = "";
+
+	qry = "INSERT INTO categories(name) VALUES("
+	+ category
+	+ " )"
+	console.log(qry);
+	sendQry(qry, req, res);
 })
 
 //Serve the react site
