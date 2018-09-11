@@ -14,7 +14,41 @@
 .PostContent
 {
 	width: 100%;
+	display: flex;
+	flex-direction: row;
+	overflow-wrap: break-word;
+	padding-left:0;
+	padding-right: 0;
 }
+
+.Image
+{
+  width: 25vw;
+  height: 25vw;
+
+}
+
+.Image:hover
+{
+	box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+	float: left;
+}
+
+
+.Thumbnail
+{
+	height: 25vw;
+	width: 25vw;
+}
+
+.PostQuote
+{
+	max-width: 75%;
+	overflow-wrap: break-word;
+}
+
+
+
 
 .CommentButton
 {
@@ -32,4 +66,30 @@
 .Replies
 {
 	margin-right: 10px;
+}
+
+
+/* ----------- Non-Retina Screens ----------- */
+@media screen 
+  and (min-device-width: 1200px) 
+  and (max-device-width: 1600px) 
+  and (-webkit-min-device-pixel-ratio: 1) {
+    
+        .Date
+    {
+    	font-size: 1.5vw;
+    }
+}
+
+/* ----------- Retina Screens ----------- */
+@media screen 
+  and (min-device-width: 1200px) 
+  and (max-device-width: 1600px) 
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (min-resolution: 192dpi) {
+    
+           .Date
+    {
+    	font-size: 1.5vw;
+    }
 }

@@ -64,6 +64,7 @@ class AddCategory extends Component {
 						max="24"
 						required
 					  />
+					<br/>
 				  <input className="PostButton" type="submit" value="Add Category" />
 			  </form>
 

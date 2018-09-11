@@ -23,7 +23,8 @@ class Comment extends Component {
 				<small>{this.convertUTCDateToLocalDate(this.props.comment.created_at).toString().slice(0,25)}</small>
 			</div>
 			<div className='CommentContent'>
-				{this.props.comment.content}
+			  { this.props.comment.image ? <a className="ThumbnailComment" href={this.props.comment.image}><img className="ImageComment" src={this.props.comment.image}  alt="UserImg"></img></a> : null}
+				<div className="CommentQuote">{this.props.comment.content}</div>
 			</div>
 			</div>
 		);

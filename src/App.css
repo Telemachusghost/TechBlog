@@ -15,10 +15,13 @@ body, html
 .Header
 {
 	display:flex;
-	flex-direction: all;
-	width:100%;
+	flex-direction: row;
 	overflow: hidden;
+	height: 100%;
+	/*justify-content: center;	*/
 }
+
+
 /*
 .categoryInstructions:clicked{transform: scale(1.1);}
 
@@ -89,7 +92,7 @@ body, html
 
 .Controls
 {
-	font-size: 3.5vw;
+	font-size: 2.7vw;
 	text-align: center;
 	border-radius: 20px;
 	margin: auto;
@@ -104,8 +107,6 @@ body, html
   overflow: hidden;
 }
 
-
-
 .Content
 {
 	min-height: 100vh;
@@ -119,6 +120,34 @@ body, html
 }
 
 
+/* ----------- Non-Retina Screens ----------- */
+@media screen 
+  and (min-device-width: 1200px) 
+  and (max-device-width: 1600px) 
+  and (-webkit-min-device-pixel-ratio: 1) {
 
+  .Controls
+  {
+		font-size: 2vw;
+  }
+
+  .Header
+  {
+  	height: 33vh;
+  }
+}
+
+/* ----------- Retina Screens ----------- */
+@media screen 
+  and (min-device-width: 1200px) 
+  and (max-device-width: 1600px) 
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (min-resolution: 192dpi) {
+
+  	    .Controls
+  {
+		font-size: 2vw;
+  }
+}
 
 

@@ -42,3 +42,41 @@ in this file because it felt easier to me at the time
 	padding-left: 1.2em;
 	padding-right: 1.2em;
 }
+
+
+/* ----------- Non-Retina Screens ----------- */
+@media screen 
+  and (min-device-width: 1200px) 
+  and (max-device-width: 1600px) 
+  and (-webkit-min-device-pixel-ratio: 1) {
+
+    .PostContent
+    {
+    	font-size: 2vw;
+    }
+
+    .Title
+    {
+	  font-size: 3vw;
+	}
+
+	.Nickname
+	{
+	  font-size:2vw;
+    }
+  
+}
+
+/* ----------- Retina Screens ----------- */
+@media screen 
+  and (min-device-width: 1200px) 
+  and (max-device-width: 1600px) 
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (min-resolution: 192dpi) {
+
+  	    .PostContent
+    {
+    	font-size: 2vw;
+    }
+
+}

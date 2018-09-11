@@ -32,10 +32,25 @@ class AddComment extends Component {
 		let nickname = this.state.nickname;
 		let content = this.state.content;
 		let postid = this.state.postid;
+		const data = new FormData();
+		let fileName = "";
+		if (this.uploadInput.files[0]) {
+		  fileName = this.uploadInput.files[0].name;
+      data.append('file', this.uploadInput.files[0])
+    }
+
 		if (!nickname)
 			nickname = 'anonymous';
 
-		this.props.onComment({nickname: nickname, content: content, postid: postid});
+		this.props.onComment(
+			{
+				nickname: nickname, 
+				content: content, 
+				postid: postid,
+				fileName: fileName,
+				data: data
+		  });
+		
 		this.setState({
 			nickname: "",
 			content: "",
@@ -70,8 +85,16 @@ class AddComment extends Component {
 						placeholder="Comment"
 					/>
 				</label>
+				<label>
+				  	<input className="ImageUpload"
+					  ref={(ref) => {this.uploadInput = ref;}}
+            type="file"
+            size="11"
+					/>
+				</label>
 				<input className="PostButton" type="submit" value="Post" />
-			</form>
+			</form>					
+
 		)
 	}
 

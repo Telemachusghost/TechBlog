@@ -42,7 +42,7 @@ class CommentContainer extends Component {
             	this.props.comments.filter(comment => comment.post_id === this.props.post_id)
                     					   .sort((a,b) => Date.parse(a.created_at) > Date.parse(b.created_at))
                                  .map((comment, key) => 
-        	            					   	<Comment key={key} comment={comment}/>
+        	            					   	<Comment key={key + 200} comment={comment}/>
                     					   	)
               }
               {this.state.isHidden &&  

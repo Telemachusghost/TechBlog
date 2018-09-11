@@ -28,6 +28,8 @@ class App extends Component {
       this.onSearchPosts.bind(this);
     this.onSearchCategories =
       this.onSearchCategories.bind(this);
+    this.onImageUpload =
+      this.onImageUpload.bind(this);
   }
   
   /*
@@ -85,7 +87,6 @@ class App extends Component {
   onCategoryChange = (value) => {
     this.setState({currentCategory: value.category});
     this.forceUpdate();
-    // console.log(this.state);
   }
   
   /*
@@ -108,6 +109,9 @@ class App extends Component {
   TODO Add doc for this function
   */
   PostComment = (form) => {
+    this.onImageUpload(form.data);
+    console.log(form.fileName);
+    form.data = "";
     fetch('api/postcomment', {
       method: 'PUT',
       mode: 'cors',
@@ -127,15 +131,25 @@ class App extends Component {
   */
   AddCategory = (form) => {
     fetch('api/addcategory', {
-    method: 'PUT',
-    mode: 'cors',
-    cache: 'default',
-    body: JSON.stringify(form),
-    headers: {
-      "Content-Type": "application/json"
-    }
+      method: 'PUT',
+      mode: 'cors',
+      cache: 'default',
+      body: JSON.stringify(form),
+      headers: {
+        "Content-Type": "application/json"
+      }
     })
     this.updateCategories();
+  }
+
+  onImageUpload = (data) => {
+    console.log(data);
+    fetch('api/upload', {
+      method: 'POST',
+      mode: 'cors',
+      cache: 'default',
+      body: data,
+    })
   }
    
   /*
@@ -157,7 +171,7 @@ class App extends Component {
       posts: this.state.tempPosts.filter((post) => post.title.toLowerCase().match(re) || post.POST.toLowerCase().match(re))
     })
 
-    // this.forceUpdate();
+    this.forceUpdate();
     // console.log(this.state.posts);
   }
   
@@ -192,6 +206,7 @@ class App extends Component {
           <AddPost 
             onPost={this.AddPost} 
             currentCategory={this.state.currentCategory}
+            onImageUpload={this.onImageUpload}
           />
           <AddCategory
           onCategoryAdd={this.AddCategory}

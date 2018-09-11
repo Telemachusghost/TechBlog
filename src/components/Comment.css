@@ -1,29 +1,92 @@
-.Comment
-{
-	
-}
-
 .CommentNickname
 {
 	width: 45%;
+	max-width: 45%;
 	font-size: 3vw;
 	padding-left: 3px;
 	margin-top: 5px;
   box-shadow: 1px 1px 1px 1px #929aa8;
   background: #cdddf7;
   border-radius: 1px;
+  text-overflow: break-word;
+  overflow-wrap: break-word;
 }
 
 .CommentContent
 {
+	display: flex;
+	flex-direction: row;
+	overflow-wrap: break-word;
+	text-overflow: break-word;
 	font-size: 4vw;
 	margin-bottom: 5px;
 	margin-top: 5px;
 	text-align: left;
 	padding: 0 5px 0px 5px;
-	display: flex;
-	flex-direction: column;
 	box-shadow: 1px 1px 1px 1px #929aa8;
   background: #cdddf7;
   border-radius: 1px;
+}
+
+.CommentQuote
+{
+	max-width: 75%;
+	overflow-wrap: break-word;
+}
+
+
+.ImageComment
+{
+  width: 15vw;
+  height: 15vw;
+
+}
+
+.ImageComment:hover
+{
+	box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+	float: left;
+}
+
+
+.ThumbnailComment
+{
+	height: 15vw;
+	width: 15vw;
+}
+
+/* ----------- Non-Retina Screens ----------- */
+@media screen 
+  and (min-device-width: 1200px) 
+  and (max-device-width: 1600px) 
+  and (-webkit-min-device-pixel-ratio: 1) {
+    
+    .CommentContent
+    {
+    	font-size: 2vw;
+    }
+
+    .CommentQuote
+    {
+    	font-size: 2vw;
+    }
+
+    .CommentNickname
+    {
+    	font-size: 2vw;
+    }
+
+}
+
+/* ----------- Retina Screens ----------- */
+@media screen 
+  and (min-device-width: 1200px) 
+  and (max-device-width: 1600px) 
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (min-resolution: 192dpi) {
+   
+   .CommentContent
+   {
+     font-size: 2vw;
+   }
 }

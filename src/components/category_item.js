@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import "./category_item.css";
-
 
 class CategoryItem extends Component {
 
@@ -10,7 +8,7 @@ class CategoryItem extends Component {
 	}
 
 	render() {
-		return <div className="CatItem"> <button onClick={this.handleClick.bind(this)}> <h1>{this.props.category}</h1> </button></div>;
+		return <div className="CatItem"> <button className="CategoryItem" onClick={this.handleClick.bind(this)}> <h1>{this.props.category}</h1> </button></div>;
 	}
 }
 

@@ -46,7 +46,8 @@ class Post extends Component {
             </div>
          </div>
          <div className="PostContent">
-            {this.state.post.POST}
+            { this.state.post.image ? <a className="Thumbnail" href={this.state.post.image}><img className="Image" src={this.state.post.image}  alt="UserImg"></img></a> : null}
+            <div className="PostQuote">{this.state.post.POST}</div>
          </div>
      </div>
     );

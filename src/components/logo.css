@@ -2,19 +2,20 @@
 
 .Home
 {
-	width: 165px;
-	height: 200px;
+	width: 75px;
+	height: 75px;
+	left: 0;
 }
 
 .logo 
 {
 	top: 0;
 	left: 0;
-	background-image: url('logo.svg');
+	background-image: url('logo_small.svg');
 	background-size: 200px 200px;
 	background-repeat:no-repeat;
-	height:200px;
-	width:165px;
+	height:75px;
+	width:75px;
 	margin: 0 0 0 0;
 	overflow: hidden;
 }
@@ -37,6 +38,28 @@ a:hover
 	text-decoration: none;
 }
 
+
+/* ----------- Non-Retina Screens ----------- */
+@media screen 
+  and (min-device-width: 1200px) 
+  and (max-device-width: 1600px) 
+  and (-webkit-min-device-pixel-ratio: 1) {
+    .logo
+    {
+    	background-image: url('logo_big.svg');
+    	height:200px;
+	    width:165px;
+    }
+}
+
+/* ----------- Retina Screens ----------- */
+@media screen 
+  and (min-device-width: 1200px) 
+  and (max-device-width: 1600px) 
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (min-resolution: 192dpi) {
+    
+}
 
 
 

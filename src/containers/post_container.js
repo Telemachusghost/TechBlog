@@ -32,12 +32,12 @@ class PostContainer extends Component {
 							.sort((a,b) => (Date.parse(a.created_at) + this.state.popFactor*a.popularity) < (Date.parse(b.created_at) + this.state.popFactor*b.popularity))
 							.map((post, i) => {
 							return (
-							<div key={i} className="container">
-								<div key={i} className="FeaturedPost">
-								<Post key={post.id} post={post} />
+							<div key={post.id} className="container">
+								<div key={i + 100} className="FeaturedPost">
+								<Post key={post.id + 101} post={post} />
 								</div>
 								<CommentContainer 
-								key={post.id} 
+								key={post.id+2} 
 								post_id={post.id} 
 								comments={this.props.comments}
 								onComment={this.props.onComment}
