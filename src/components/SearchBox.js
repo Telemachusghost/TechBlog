@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './SearchBox.css';
 
 class SearchBox extends Component {
 	  constructor(props) {
@@ -26,15 +27,15 @@ class SearchBox extends Component {
 	}
 
 	render() {
-		return (
-
+		return ( 
         <form >
 			    <input
+			      className="SearchBox"
 						type="text" 
 						onKeyUp= {this.handleChange}
 						placeholder={this.props.placeholder}
-						size="15"
-						max="256"
+						size={this.props.size}
+						max={this.props.max}
 						required
 					/>
         </form>

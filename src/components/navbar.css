@@ -14,6 +14,19 @@
   font-family: 'Roboto', sans-serif;  
 }
 
+.LandscapeNavbar
+{
+	right: 0;
+	margin-top: 0px;
+	text-align: center;
+	overflow-x:scroll;
+	overflow-y: hidden;
+	display:flex;
+	-ms-overflow-style: none;
+  overflow: -moz-scrollbars-none;
+  font-family: 'Roboto', sans-serif;  
+}
+
 .Navbar::-webkit-scrollbar { 
     display: none; 
 }
@@ -30,8 +43,12 @@
 	outline: none;
 	margin: 0;
 	top: 15px;
-	
+	white-space: nowrap;
 }
+
+.CatItem:hover { cursor: hand; }
+
+
 
 h1
 {
@@ -41,6 +58,152 @@ h1
 button:clicked
 {
 	text-decoration: none;
+}
+
+
+
+
+
+
+
+ 
+
+
+/* ----------- iPad 3, 4 and Pro 9.7" ----------- */
+
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (-webkit-min-device-pixel-ratio: 2) {
+
+}
+
+/* Portrait */
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (orientation: portrait) 
+  and (-webkit-min-device-pixel-ratio: 2) {
+
+}
+
+/* Landscape */
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (orientation: landscape) 
+  and (-webkit-min-device-pixel-ratio: 2) {
+
+}
+
+/* ----------- iPad Pro 10.5" ----------- */
+
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 834px) 
+  and (max-device-width: 1112px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+
+}
+
+/* Portrait */
+/* Declare the same value for min- and max-width to avoid colliding with desktops */
+/* Source: https://medium.com/connect-the-dots/css-media-queries-for-ipad-pro-8cad10e17106*/
+@media only screen 
+  and (min-device-width: 834px) 
+  and (max-device-width: 834px) 
+  and (orientation: portrait) 
+  and (-webkit-min-device-pixel-ratio: 2) {
+
+}
+
+/* Landscape */
+/* Declare the same value for min- and max-width to avoid colliding with desktops */
+/* Source: https://medium.com/connect-the-dots/css-media-queries-for-ipad-pro-8cad10e17106*/
+@media only screen 
+  and (min-device-width: 1112px) 
+  and (max-device-width: 1112px) 
+  and (orientation: landscape) 
+  and (-webkit-min-device-pixel-ratio: 2) {
+
+}
+
+/* ----------- iPad Pro 12.9" ----------- */
+
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 1024px) 
+  and (max-device-width: 1366px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+
+    .Navbar
+    {
+    /*	margin: auto;*/
+      margin-top: 25px;
+    	margin-left: 57px;
+    	width: 100%;
+    }
+
+    .LandscapeNavbar
+    {
+    	/*	margin: auto;*/
+      margin-top: 45px;
+    	margin-left: 57px;
+    	width: 100%;
+    }
+  
+}
+
+/* Portrait */
+/* Declare the same value for min- and max-width to avoid colliding with desktops */
+/* Source: https://medium.com/connect-the-dots/css-media-queries-for-ipad-pro-8cad10e17106*/
+@media only screen 
+  and (min-device-width: 1024px) 
+  and (max-device-width: 1024px) 
+  and (orientation: portrait) 
+  and (-webkit-min-device-pixel-ratio: 2) {
+
+
+
+}
+
+/* Landscape */
+/* Declare the same value for min- and max-width to avoid colliding with desktops */
+/* Source: https://medium.com/connect-the-dots/css-media-queries-for-ipad-pro-8cad10e17106*/
+@media only screen 
+  and (min-device-width: 1366px) 
+  and (max-device-width: 1366px) 
+  and (orientation: landscape) 
+  and (-webkit-min-device-pixel-ratio: 2) {
+
+}
+
+/* ----------- iPad 1, 2, Mini and Air ----------- */
+
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (-webkit-min-device-pixel-ratio: 1) {
+  	    .CategoryItem
+    {
+      font-size: 2vw;
+    }
+
+    .Navbar
+    {
+    	margin: auto;
+    	margin-left: 57px;
+    	margin-top: 40px;
+    	width: 100%;
+    }
+
+    .LandscapeNavbar
+    {
+    	margin-top: 30px;
+    }
+
 }
 
 
@@ -57,11 +220,14 @@ button:clicked
 
     .Navbar
     {
-    	margin: auto;
-    	margin-left: 100px;
+    /*	margin: auto;*/
+      margin-top: 50px;
+    	margin-left: 57px;
+    	width: 100%;
     }
   
 }
+
 
 /* ----------- Retina Screens ----------- */
 @media screen 
@@ -75,10 +241,5 @@ button:clicked
       font-size: 0.9vw;
     }
 
-    .Navbar
-    {
-    	margin: auto;
-    	margin-left: 200px;
-    }
   	
 }

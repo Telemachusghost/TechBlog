@@ -9,7 +9,23 @@ class Navbar extends Component {
     super(props);
     this.state = {
       categories: this.props.categories,
+      navbarclass: "Navbar"
     }
+    window.addEventListener("orientationchange", function () {
+      if (window.orientation == 90) {
+        this.setState(
+          {
+            navbarclass: "LandscapeNavbar"
+          }
+        );
+      } else {
+        this.setState(
+          {
+            navbarclass: "Navbar"
+          }
+        );
+      }
+    }.bind(this));
     
   }
 
@@ -17,14 +33,14 @@ class Navbar extends Component {
     this.setState(
       {
         categories: this.props.categories,
-      });
-    
+      }); 
   }
+
 
   render() {
     return (
-      <div className="Navbar">
-      {console.log(this.props.categories.sort((a,b) => b.popularity -  a.popularity   ))}
+
+      <div className={this.state.navbarclass}>
       {this.props.categories.sort(function compare(a, b) {
                                       if (b.popularity < a.popularity) return -1;
                                       if (b.popularity > a.popularity) return 1;

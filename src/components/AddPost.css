@@ -19,13 +19,16 @@
 
 .AddPostButton
 {
-	border: 1px solid black;
 	background: transparent;
 	font-family: 'Roboto', sans-serif;
 	font-weight: bold;
 	text-decoration: none;
-	box-shadow: 1px 1px 1px 1px #929aa8;
+  border-color: black;
+  border: 1px solid black;
+  outline: none;
 }
+
+.AddPostButton:hover{ transform: scale(0.9) }
 
 .ImageUpload
 {
@@ -33,32 +36,7 @@
 	margin: auto;
 }
 
-/* ----------- Non-Retina Screens ----------- */
-@media screen 
-  and (min-device-width: 1200px) 
-  and (max-device-width: 1600px) 
-  and (-webkit-min-device-pixel-ratio: 1) {
 
-    .AddPostButton
-    {
-      border: 0px;
-    }
-  
-}
-
-/* ----------- Retina Screens ----------- */
-@media screen 
-  and (min-device-width: 1200px) 
-  and (max-device-width: 1600px) 
-  and (-webkit-min-device-pixel-ratio: 2)
-  and (min-resolution: 192dpi) {
-
-    .AddPostButton
-    {
-      border: 0px;
-    }
-
-}
 
 
 

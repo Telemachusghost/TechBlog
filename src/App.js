@@ -211,8 +211,8 @@ class App extends Component {
           <AddCategory
           onCategoryAdd={this.AddCategory}
           />
-          <SearchBox className="searchCategories" onSearch={this.onSearchCategories} placeholder="Search Categories"/>
-          <SearchBox className="searchPosts" onSearch={this.onSearchPosts} placeholder="Search Posts"/>
+          <SearchBox  onSearch={this.onSearchCategories} placeholder=" Search Categories" size="13" max="256"/>
+          <SearchBox  onSearch={this.onSearchPosts} placeholder=" Search Posts" size="13" max="256"/>
         </div>
         <div className="Content">
           <PostContainer posts={this.state.posts} 
