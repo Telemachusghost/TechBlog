@@ -1,2 +1,2 @@
 # TechBlog
-A personal technology blog built using react and redux
+A personal technology blog built using react
