@@ -39,7 +39,7 @@ class Post extends Component {
      <div className="Post">
          <div className="Title">
             <small className="Date">{this.convertUTCDateToLocalDate(this.state.post.created_at).toString().slice(0,25)}</small>
-            <small className="Date Replies">Replies:{this.state.post.popularity}</small>
+            <small className="Date Replies id">Replies:{this.state.post.popularity} #{this.state.post.id}</small>
             {this.state.post.title}
             <div className="Nickname"> 
             OP:{this.state.post.nickname}

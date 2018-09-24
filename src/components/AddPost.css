@@ -28,7 +28,7 @@
   outline: none;
 }
 
-.AddPostButton:hover{ transform: scale(0.9) }
+.AddPostButton:active{ transform: scale(0.99) }
 
 .ImageUpload
 {

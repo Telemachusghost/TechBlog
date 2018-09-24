@@ -31,6 +31,41 @@ class App extends Component {
     this.onImageUpload =
       this.onImageUpload.bind(this);
   }
+
+  componentWillMount() {
+    if (window.orientation === 90) {
+      this.setState(
+      {
+        landscape: true
+      })
+    }
+    else {
+      this.setState({
+        landscape: false
+      })
+    }
+  }
+
+  componentDidMount() {
+    this.updateComments();
+    this.updateCategories();
+    this.updatePosts();
+    window.addEventListener("orientationchange", function () {
+      if (window.orientation === 90) {
+        this.setState(
+          {
+            landscape: true 
+          }
+        );
+      } else {
+        this.setState(
+          {
+            landscape: false
+          }
+        );
+      }
+    }.bind(this)); 
+  }
   
   /*
   Updates the current posts in the view and forces App.js to rerender the relevant child components
@@ -41,7 +76,6 @@ class App extends Component {
     .then(posts => 
       {
         this.setState({ posts: posts, tempPosts: posts})
-        // console.log(posts)
         this.forceUpdate();
       })
   }
@@ -53,9 +87,15 @@ class App extends Component {
     fetch('api/categories')
     .then(response => response.json())
     .then(categories => {
-      this.setState({ categories: categories, tempCategories: categories})
-      // console.log(categories)
-      this.forceUpdate();
+      categories = categories.sort(function compare(a, b) {
+                                      if (b.popularity < a.popularity) return -1;
+                                      if (b.popularity > a.popularity) return 1;
+                                      if (b.category > a.category) return -1;
+                                      if (b.category < a.category) return 1; 
+                                      return 0;
+                            })  
+      this.setState({ categories: categories, tempCategories: categories, currentCategory: categories[0].category})
+      // this.forceUpdate();
     })
   }
 
@@ -73,16 +113,7 @@ class App extends Component {
   }
   
   /*
-  TODO add doc for this method 
-  */
-  componentDidMount() {
-    this.updateComments();
-    this.updateCategories();
-    this.updatePosts();
-  }
-  
-  /*
-  TODO add doc for this function
+  Method that is called when the category is changed by selecting a category in the navbar
   */
   onCategoryChange = (value) => {
     this.setState({currentCategory: value.category});
@@ -90,7 +121,7 @@ class App extends Component {
   }
   
   /*
-  TODO add doc for this function
+  Adds a post to server image filename is present in form data
   */
   AddPost = (form) => {
     fetch('api/addpost', {
@@ -106,11 +137,11 @@ class App extends Component {
   }
 
   /*
-  TODO Add doc for this function
+  Adds a comment and sends the file data portion to onImageUpload
+  if no image is present the error is logged to console through server
   */
   PostComment = (form) => {
     this.onImageUpload(form.data);
-    console.log(form.fileName);
     form.data = "";
     fetch('api/postcomment', {
       method: 'PUT',
@@ -127,7 +158,7 @@ class App extends Component {
 
   
   /*
-  TODO Add doc for this function
+  Adds a category to the SQL schema
   */
   AddCategory = (form) => {
     fetch('api/addcategory', {
@@ -141,9 +172,11 @@ class App extends Component {
     })
     this.updateCategories();
   }
-
+  
+  /*
+  Method used when image is uploaded which sends a image file to node.js in order to be transferred to server
+  */
   onImageUpload = (data) => {
-    console.log(data);
     fetch('api/upload', {
       method: 'POST',
       mode: 'cors',
@@ -199,9 +232,12 @@ class App extends Component {
       <div className="App">
       	<div className="Header">
         	<Logo />
-        	<Navbar categories={this.state.categories} onChange={this.onCategoryChange}/>
+        	<Navbar 
+            categories={this.state.categories} 
+            onChange={this.onCategoryChange} 
+            orientation={this.state.landscape}
+          />
         </div>
-        {  /*<h1 className="categoryInstructions"><div className="FingerIcon"></div><div className="KeyboardIcon"></div><br/></h1>*/ }
         <div className="Controls">
           <AddPost 
             onPost={this.AddPost} 
@@ -211,8 +247,18 @@ class App extends Component {
           <AddCategory
           onCategoryAdd={this.AddCategory}
           />
-          <SearchBox  onSearch={this.onSearchCategories} placeholder=" Search Categories" size="13" max="256"/>
-          <SearchBox  onSearch={this.onSearchPosts} placeholder=" Search Posts" size="13" max="256"/>
+          <SearchBox  
+            onSearch={this.onSearchCategories} 
+            placeholder=" Search Categories" 
+            size="13" 
+            max="256"
+          />
+          <SearchBox  
+            onSearch={this.onSearchPosts} 
+            placeholder=" Search Posts" 
+            size="13" 
+            max="256"
+          />
         </div>
         <div className="Content">
           <PostContainer posts={this.state.posts} 

@@ -13,7 +13,8 @@
 	width: 100%;
 	border: 1px solid black;
 	outline: none;
+	padding: 0;
 }
 
 
-.AddCatButton:hover { transform: scale(0.9) }
+.AddCatButton:active { transform: scale(0.99) }

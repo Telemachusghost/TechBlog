@@ -9,38 +9,25 @@ class Navbar extends Component {
     super(props);
     this.state = {
       categories: this.props.categories,
-      navbarclass: "Navbar"
+      orientation: this.props.orientation
     }
-    window.addEventListener("orientationchange", function () {
-      if (window.orientation == 90) {
-        this.setState(
-          {
-            navbarclass: "LandscapeNavbar"
-          }
-        );
-      } else {
-        this.setState(
-          {
-            navbarclass: "Navbar"
-          }
-        );
-      }
-    }.bind(this));
-    
   }
 
   componentWillReceiveProps(props) {
     this.setState(
       {
         categories: this.props.categories,
-      }); 
+        orientation: this.props.orientation
+      });
+    // this.forceUpdate();
+    // console.log(this.state.navbarclass)
   }
 
 
   render() {
     return (
 
-      <div className={this.state.navbarclass}>
+      <div className={this.props.orientation ? "LandscapeNavbar" : "Navbar"}>
       {this.props.categories.sort(function compare(a, b) {
                                       if (b.popularity < a.popularity) return -1;
                                       if (b.popularity > a.popularity) return 1;
