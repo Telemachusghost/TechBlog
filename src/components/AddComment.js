@@ -68,14 +68,14 @@ class AddComment extends Component {
 
 	render() {
 		return (
-			<form onSubmit={this.handleSubmit}>
+			<form className="CommentForm" onSubmit={this.handleSubmit}>
 				<label>
 					<input 
 						type="text" 
 						value={this.state.nickname} 
 						onChange={this.setValue.bind(this, 'nickname')} 
 						placeholder="Nickname"
-						size="17"
+						size="14"
 						/>
 				</label>
 				<label>
@@ -85,7 +85,7 @@ class AddComment extends Component {
 						onChange={this.setValue.bind(this, 'content')}
 						required
 						placeholder="Comment"
-						cols="19"
+						cols="15"
 					>
 					  {this.state.replytag}asdfasdf
 					</textarea>

@@ -43,7 +43,7 @@ class Post extends Component {
             <small className="Date">{this.convertUTCDateToLocalDate(this.state.post.created_at).toString().slice(0,25)}</small>
             <small className="Date Replies id">
               Replies:{this.state.post.popularity} 
-              <Popup trigger = {
+              <Popup className="CommentForm" trigger = {
                 <button className='SmallReply'>
                    #{this.state.post.id}
                 </button>
@@ -52,7 +52,7 @@ class Post extends Component {
                 contentStyle={{background:"#cdddf7"}}
                 arrow={false}>
               <AddComment onComment={this.props.onComment} postid = {this.state.post.id}/>
-</Popup>
+             </Popup>
             </small>
             {this.state.post.title}
             <div className="Nickname"> 

@@ -38,39 +38,39 @@ class AddPost extends Component {
    
 		let nickname = this.state.nickname;
 		let content = this.state.content;
-    let title = this.state.title;
-    let category = this.state.category;
-    let file = "";
-    let fileName = "";
-    const data = new FormData();
-    if (this.uploadInput.files[0]) {
-		  fileName = this.uploadInput.files[0].name;
-      data.append('file', this.uploadInput.files[0])
-    }
-    console.log(file);
-    console.log(fileName);
-		// console.log(data);
-		if (!nickname)
-			nickname = 'anonymous';
+	    let title = this.state.title;
+	    let category = this.state.category;
+	    let file = "";
+	    let fileName = "";
+	    const data = new FormData();
+	    if (this.uploadInput.files[0]) {
+			  fileName = this.uploadInput.files[0].name;
+	      data.append('file', this.uploadInput.files[0])
+	    }
+	    console.log(file);
+	    console.log(fileName);
+			// console.log(data);
+			if (!nickname)
+				nickname = 'anonymous';
 
-		this.props.onPost(
-			{
-				nickname: nickname, 
-				content: content, 
-				title: title, 
-				category: category,
-				fileName: fileName
-			});
+			this.props.onPost(
+				{
+					nickname: nickname, 
+					content: content, 
+					title: title, 
+					category: category,
+					fileName: fileName
+				});
 
-		this.props.onImageUpload(data);
+			this.props.onImageUpload(data);
 
-		this.setState(
-      {
-      	nickname: "",
-      	content: "",
-      	title: ""
-      }
-		)
+			this.setState(
+		      {
+		      	nickname: "",
+		      	content: "",
+		      	title: ""
+		      }
+		  )
 	}
 
 	setValue(field, event) {
