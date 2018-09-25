@@ -13,8 +13,8 @@
 FashionPhysician.pem
 server_dev.js
 /sql/*
-/public
-/templates
+/public/*
+/templates/*
 
 # scripts
 connect_ec2aws.sh
