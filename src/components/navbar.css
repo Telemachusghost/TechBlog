@@ -48,8 +48,6 @@
 
 .CatItem:hover { cursor: hand; }
 
-
-
 h1
 {
 	margin: 0;
@@ -240,6 +238,128 @@ button:clicked
     {
       font-size: 0.9vw;
     }
-
-  	
 }
+
+/* Zoom Minus */
+@media screen
+  and (min-device-width: 1200px) 
+  and (max-device-width: 1600px) 
+and (-webkit-max-device-pixel-ratio: 0.9)
+{
+      .Home
+      {
+        display: none;
+      }
+}
+
+/* Zoom 1 */
+@media screen
+  and (min-device-width: 1200px) 
+  and (max-device-width: 1600px) 
+and (-webkit-min-device-pixel-ratio: 1.2)
+{
+      .Header
+    {
+      height: 40vh;
+    }
+}
+
+/* Zoom 2 */
+@media screen
+  and (min-device-width: 1200px) 
+  and (max-device-width: 1600px) 
+and (-webkit-min-device-pixel-ratio: 1.3)
+{
+      .Header
+    {
+      height: 30vh;
+    }
+}
+
+/* Zoom 3 */
+@media screen
+  and (min-device-width: 1200px) 
+  and (max-device-width: 1600px) 
+and (-webkit-min-device-pixel-ratio: 1.4)
+{
+      .Header
+    {
+      height: 40vh;
+    }
+}
+
+/* Zoom 4 */
+@media screen
+  and (min-device-width: 1200px) 
+  and (max-device-width: 1600px) 
+and (-webkit-min-device-pixel-ratio: 1.5)
+{
+      .Header
+    {
+      height: 50vh;
+    }
+}
+
+
+/* Zoom 5 */
+@media screen
+  and (min-device-width: 1200px) 
+  and (max-device-width: 1600px) 
+and (-webkit-min-device-pixel-ratio: 1.7)
+{
+      .Header
+    {
+      height: 50vh;
+    }
+}
+
+/* Zoom 6 */
+@media screen
+  and (min-device-width: 1200px) 
+  and (max-device-width: 1600px) 
+and (-webkit-min-device-pixel-ratio: 1.8)
+{
+      .Header
+    {
+      height: 60vh;
+    }
+}
+
+/* Zoom 6 */
+@media screen
+  and (min-device-width: 1200px) 
+  and (max-device-width: 1600px) 
+and (-webkit-min-device-pixel-ratio: 2.5)
+{
+      .Header
+    {
+      height: 80vh;
+    }
+}
+
+/* Zoom 6 */
+@media screen
+  and (min-device-width: 1200px) 
+  and (max-device-width: 1600px) 
+and (-webkit-min-device-pixel-ratio: 2.6)
+{
+      .Header
+    {
+      height: 110vh;
+    }
+}
+
+/* Zoom 6 */
+@media screen
+  and (min-device-width: 1200px) 
+  and (max-device-width: 1600px) 
+and (-webkit-min-device-pixel-ratio: 2.7)
+{
+      .Header
+    {
+      height: 135vh;
+    }
+}
+
+
+
