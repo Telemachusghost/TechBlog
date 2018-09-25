@@ -1,0 +1,11 @@
+import Popup from "reactjs-popup";
+
+<Popup trigger = {
+              <button>
+              </button>
+              }
+              position="left"
+              contentStyle={{background:"#cdddf7"}}
+              arrow={false}>
+              <AddComment onComment={this.props.onComment} postid = {this.props.post_id}/>
+</Popup>

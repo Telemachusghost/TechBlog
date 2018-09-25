@@ -34,7 +34,11 @@ class PostContainer extends Component {
 							return (
 							<div key={post.id} className="container">
 								<div key={i + 100} className="FeaturedPost">
-								<Post key={post.id + 101} post={post} />
+								<Post 
+								  key={post.id + 101} 
+								  post={post}
+								  onComment={this.props.onComment} 
+								/>
 								</div>
 								<CommentContainer 
 								key={post.id+2} 

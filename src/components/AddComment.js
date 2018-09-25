@@ -8,6 +8,7 @@ class AddComment extends Component {
 		this.state = {
 			value: '',
 			nickname: "",
+			replytag: "hello",
 			content: "",
 			postid: this.props.postid,
 		};
@@ -74,6 +75,7 @@ class AddComment extends Component {
 						value={this.state.nickname} 
 						onChange={this.setValue.bind(this, 'nickname')} 
 						placeholder="Nickname"
+						size="17"
 						/>
 				</label>
 				<label>
@@ -83,7 +85,10 @@ class AddComment extends Component {
 						onChange={this.setValue.bind(this, 'content')}
 						required
 						placeholder="Comment"
-					/>
+						cols="19"
+					>
+					  {this.state.replytag}asdfasdf
+					</textarea>
 				</label>
 				<label>
 				  	<input className="ImageUpload"

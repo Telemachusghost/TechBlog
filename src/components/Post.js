@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import Popup from "reactjs-popup";
+import AddComment from './AddComment';
 import './Post.css';
 
 
@@ -39,7 +41,19 @@ class Post extends Component {
      <div className="Post">
          <div className="Title">
             <small className="Date">{this.convertUTCDateToLocalDate(this.state.post.created_at).toString().slice(0,25)}</small>
-            <small className="Date Replies id">Replies:{this.state.post.popularity} #{this.state.post.id}</small>
+            <small className="Date Replies id">
+              Replies:{this.state.post.popularity} 
+              <Popup trigger = {
+                <button className='SmallReply'>
+                   #{this.state.post.id}
+                </button>
+                }
+                position="left"
+                contentStyle={{background:"#cdddf7"}}
+                arrow={false}>
+              <AddComment onComment={this.props.onComment} postid = {this.state.post.id}/>
+</Popup>
+            </small>
             {this.state.post.title}
             <div className="Nickname"> 
             OP:{this.state.post.nickname}
